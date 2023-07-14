@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import { ConfigureStoreOptions, configureStore } from '@reduxjs/toolkit';
 import { Styles } from './estilos/styles';
-
+import reducers from './src/reducers';
 
 export default function App() {
   return (
