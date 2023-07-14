@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
 import superHeros from "./superHeros";
  
-export default reducers({
+export default Reducers({
     superheroes: superHeros
  })
