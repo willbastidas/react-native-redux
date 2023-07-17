@@ -16,4 +16,4 @@ export const  colores ={
     menssajeroRed: '#e30b17', 
     mennsajeroBlue:'#303054'
 
-}
+};
