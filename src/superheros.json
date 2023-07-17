@@ -1,50 +1,26 @@
 [
     {
-        "nombre": " ",
-        "apellido": "", 
-        "emali": "", 
-        "zona de recidencia": ""
+        "nombre": "willker",
+        "apellido": "García", 
+        "emali": "willkerbastidas@gmail.com", 
+        "zona de recidencia": "baruta"
     },
     {
-        "nombre": " ",
+        "nombre": "Dariana",
         "apellido": "", 
-        "emali": "", 
-        "zona de recidencia": ""
+        "emali": "dary@gamil.com", 
+        "zona de recidencia": "petare"
     },
     {
-        "nombre": " ",
-        "apellido": "", 
-        "emali": "", 
-        "zona de recidencia": ""
+        "nombre": "luis",
+        "apellido": "vivas", 
+        "emali": "luisvivas@gmail.com", 
+        "zona de recidencia": "Bellas artes"
     },
     {
-        "nombre": " ",
-        "apellido": "", 
-        "emali": "", 
-        "zona de recidencia": ""
-    },
-    {
-        "nombre": " ",
-        "apellido": "", 
-        "emali": "", 
-        "zona de recidencia": ""
-    },
-    {
-        "nombre": " ",
-        "apellido": "", 
-        "emali": "", 
-        "zona de recidencia": ""
-    },
-    {
-        "nombre": " ",
-        "apellido": "", 
-        "emali": "", 
-        "zona de recidencia": ""
-    },
-    {
-        "nombre": " ",
-        "apellido": "", 
-        "emali": "", 
-        "zona de recidencia": ""
+        "nombre": "willken",
+        "apellido": "bastidas", 
+        "emali": "willgamer@gmail.com", 
+        "zona de recidencia": "Concresa"
     }
 ]

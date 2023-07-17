@@ -1,6 +1,6 @@
-import { combineReducers } from "redux";
-import superHeros from "./superHeros";
+import {combineReducers} from 'redux';
+import superHeros from '../superheros.json';
  
-export default Reducers({
+export default combineReducers({
     superheroes: superHeros
  })

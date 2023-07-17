@@ -6,21 +6,14 @@ import { createStore } from 'redux';
 import { ConfigureStoreOptions, configureStore } from '@reduxjs/toolkit';
 import { Styles } from './estilos/styles';
 import reducers from './src/reducers';
+import { combineReducers } from '@reduxjs/toolkit';
+
+
 
 export default function App() {
   return (
-    <View style={Styles.container}>
-      <Text>prueba de redux</Text>
-      <StatusBar style="auto" />
-    </View>
+    <Provider>
+       <View store={createStore(reducers)} />
+    </Provider>
   );
 }
-
-// export const Styles = StyleSheet.create({
-//   container: {
-//       flex: 1,
-//       backgroundColor: '#fff',
-//       alignItems: 'center',
-//       justifyContent: 'center',
-//     },
-//   });
