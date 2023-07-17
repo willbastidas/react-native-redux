@@ -8,6 +8,10 @@ export const Styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
       },
+      containerScroll: {
+        flex: 1,
+        backgroundColor: '#fff',
+      },
       conteiner2: {
         flex: 1,
         padding: 35,
@@ -27,6 +31,8 @@ export const Styles = StyleSheet.create({
         borderColor: colores.dark,
         borderRadius: 10,
         borderWidth: 1,
+        padding: 6,
+        textAlign: 'center',
       },
       textoDelTab: {
         textAlign: 'center',
@@ -57,10 +63,14 @@ export const Styles = StyleSheet.create({
         marginBottom: 20,
         borderBottomWidth: 1,
         borderBottomColor: colores.gray,
+        textAlign: 'center',
 
       },
       map: {
         width: '100%',
         height: '100%',
       },
+      space_up:{
+        marginTop: 20,
+      }
 });

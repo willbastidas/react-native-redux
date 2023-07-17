@@ -3,6 +3,7 @@ import { View, TextInput, Button, Text } from 'react-native';
 import { useDispatch } from 'react-redux';
 import { addItem } from '../reducers';
 import { Styles } from '../estilos/styles';
+import { ScrollView } from 'react-native';
 
 const AddItem = () => {
   const [name, setName] = useState('');
@@ -20,8 +21,8 @@ const AddItem = () => {
   };
 
   return (
-    <View style={Styles.container}>
-      <Text style={Styles.textoTitulo}>Agrege el producto que desee</Text>
+    <ScrollView style={Styles.containerScroll} >
+      <Text style={Styles.textoTitulo}>Agrege el producto que deseado</Text>
       <TextInput style={Styles.inputGroup}
         placeholder="Nombre"
         value={name}
@@ -43,7 +44,7 @@ const AddItem = () => {
         onChangeText={SetStock}
       />
       <Button title="Guardar" onPress={handlePress} />
-    </View>
+    </ScrollView>
   );
 };
 

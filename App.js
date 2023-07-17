@@ -1,5 +1,5 @@
 import React from 'react';
-import { View } from 'react-native';
+import { ScrollView, View } from 'react-native';
 import { Provider } from 'react-redux';
 import store from './store';
 import AddItem from './components/AddItem';
@@ -9,10 +9,10 @@ import { Styles } from './estilos/styles';
 const App = () => {
   return (
     <Provider store={store}>
-      <View style={Styles.container}>
+      <ScrollView style={Styles.containerScroll}>
         <AddItem />
         <ItemList />
-      </View>
+      </ScrollView>
     </Provider>
   );
 };

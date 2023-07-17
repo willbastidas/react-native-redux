@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlatList, Text } from 'react-native';
+import { FlatList, Text, ScrollView, View } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
 import { removeItem } from '../reducers';
 import { Styles } from '../estilos/styles';
@@ -13,13 +13,22 @@ const ItemList = () => {
   };
 
   return (
-    <FlatList
+    <FlatList 
       data={items}
       renderItem={({ item }) => (
-        <Text>
-          {item.name} - {item.description} - {item.tipo} - {item.stock}{' '}
-          <Text onPress={() => handleRemove(item.id)} style={Styles.boton}>Eliminar</Text>
-        </Text>
+        <ScrollView>
+          <View>
+            <Text>nombre del producto:{item.name}{' '}</Text>
+            <Text>descricion del producto:{item.description}{' '}</Text>
+            <Text>tipo del producto:{item.tipo}{' '}</Text>
+            <Text>stock del producto:{item.stock}{' '}</Text>
+          
+          </View>
+        
+          <View style={Styles.boton}>
+          <Text onPress={() => handleRemove(item.id)}>Eliminar</Text>
+          </View>
+        </ScrollView>
       )}
       keyExtractor={item => item.id}
     />
