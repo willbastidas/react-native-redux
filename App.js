@@ -8,7 +8,7 @@ import { Styles } from './estilos/styles';
 
 const App = () => {
   return (
-    <Provider store={store} style={Styles.container}>
+    <Provider store={store}>
       <View style={Styles.container}>
         <AddItem />
         <ItemList />
