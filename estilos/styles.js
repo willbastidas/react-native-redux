@@ -12,6 +12,12 @@ export const Styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#fff',
       },
+      containerScroll2: {
+        flex: 1,
+        backgroundColor: '#fff',
+        marginBottom: 10,
+        marginTop: 10, 
+      },
       conteiner2: {
         flex: 1,
         padding: 35,
@@ -50,6 +56,10 @@ export const Styles = StyleSheet.create({
       textoNombre: {
         fontSize:16,
       },
+      textoCentrado: {
+        textAlign: 'center',
+        fontSize: 15,
+      },
       botonLista:{
         backgroundColor: colores.black,
         borderButtomWidth: 1,
@@ -71,6 +81,6 @@ export const Styles = StyleSheet.create({
         height: '100%',
       },
       space_up:{
-        marginTop: 20,
+        marginTop: 10,
       }
 });

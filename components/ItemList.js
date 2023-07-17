@@ -16,17 +16,15 @@ const ItemList = () => {
     <FlatList 
       data={items}
       renderItem={({ item }) => (
-        <ScrollView>
+        <ScrollView style={Styles.containerScroll2}>
           <View>
-            <Text>nombre del producto:{item.name}{' '}</Text>
-            <Text>descricion del producto:{item.description}{' '}</Text>
-            <Text>tipo del producto:{item.tipo}{' '}</Text>
-            <Text>stock del producto:{item.stock}{' '}</Text>
-          
+            <Text>    nombre del producto:{item.name}{' '}</Text>
+            <Text>    descricion del producto:{item.description}{' '}</Text>
+            <Text>    tipo del producto:{item.tipo}{' '}</Text>
+            <Text>    stock del producto:{item.stock}{' '}</Text>
           </View>
-        
-          <View style={Styles.boton}>
-          <Text onPress={() => handleRemove(item.id)}>Eliminar</Text>
+          <View style={[Styles.boton, Styles.space_up]}>
+          <Text onPress={() => handleRemove(item.id)} style={Styles.textoCentrado}>Eliminar</Text>
           </View>
         </ScrollView>
       )}
