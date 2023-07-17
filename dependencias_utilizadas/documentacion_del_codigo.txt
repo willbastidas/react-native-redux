@@ -1,0 +1,146 @@
+¡Por supuesto! Aquí te comparto un ejemplo de cómo crear un CRUD con React Native y Redux Toolkit.
+
+El primer paso es crear una aplicación de React Native. Puedes hacerlo utilizando el siguiente comando en tu terminal:
+
+bash
+Copy code
+npx react-native init nombre_de_tu_aplicacion
+Luego, debes instalar Redux Toolkit y sus dependencias en tu proyecto. Para hacerlo, utiliza el siguiente comando:
+
+bash
+Copy code
+npm install @reduxjs/toolkit react-redux redux
+Una vez que tengas todo instalado, es hora de empezar a codificar. Primero, crea un archivo store.js en la raíz de tu proyecto. En este archivo, importa configureStore de @reduxjs/toolkit, y crea tu store.
+
+javascript
+Copy code
+import { configureStore } from '@reduxjs/toolkit';
+import rootReducer from './reducers';
+
+const store = configureStore({
+  reducer: rootReducer,
+});
+
+export default store;
+Luego, crea un archivo reducers.js donde definirás tus reducers. En este ejemplo, crearemos un reducer para manejar la lista de elementos que se guardarán en nuestra aplicación.
+
+javascript
+Copy code
+import { createSlice } from '@reduxjs/toolkit';
+
+const initialState = {
+  items: [],
+};
+
+const itemsSlice = createSlice({
+  name: 'items',
+  initialState,
+  reducers: {
+    addItem: (state, action) => {
+      state.items.push(action.payload);
+    },
+    removeItem: (state, action) => {
+      const index = state.items.findIndex(item => item.id === action.payload);
+      if (index !== -1) {
+        state.items.splice(index, 1);
+      }
+    },
+  },
+});
+
+export const { addItem, removeItem } = itemsSlice.actions;
+export default itemsSlice.reducer;
+Ahora, crea un componente llamado AddItem donde el usuario pueda ingresar los datos que quiere guardar. En este ejemplo, el usuario ingresará un nombre y una descripción.
+
+javascript
+Copy code
+import React, { useState } from 'react';
+import { View, TextInput, Button } from 'react-native';
+import { useDispatch } from 'react-redux';
+import { addItem } from '../reducers';
+
+const AddItem = () => {
+  const [name, setName] = useState('');
+  const [description, setDescription] = useState('');
+  const dispatch = useDispatch();
+
+  const handlePress = () => {
+    dispatch(addItem({ name, description }));
+    setName('');
+    setDescription('');
+  };
+
+  return (
+    <View>
+      <TextInput
+        placeholder="Nombre"
+        value={name}
+        onChangeText={setName}
+      />
+      <TextInput
+        placeholder="Descripción"
+        value={description}
+        onChangeText={setDescription}
+      />
+      <Button title="Guardar" onPress={handlePress} />
+    </View>
+  );
+};
+
+export default AddItem;
+Por último, crea un componente llamado ItemList que muestre los elementos guardados. En este ejemplo, simplemente los mostraremos en una lista.
+
+javascript
+Copy code
+import React from 'react';
+import { FlatList, Text } from 'react-native';
+import { useSelector, useDispatch } from 'react-redux';
+import { removeItem } from '../reducers';
+
+const ItemList = () => {
+  const items = useSelector(state => state.items);
+  const dispatch = useDispatch();
+
+  const handleRemove = id => {
+    dispatch(removeItem(id));
+  };
+
+  return (
+    <FlatList
+      data={items}
+      renderItem={({ item }) => (
+        <Text>
+          {item.name} - {item.description}{' '}
+          <Text onPress={() => handleRemove(item.id)}>Eliminar</Text>
+        </Text>
+      )}
+      keyExtractor={item => item.id}
+    />
+  );
+};
+
+export default ItemList;
+Ahora, para utilizar estos componentes en tu aplicación, simplemente importa AddItem y ItemList y colócalos en tu componente principal.
+
+javascript
+Copy code
+import React from 'react';
+import { View } from 'react-native';
+import { Provider } from 'react-redux';
+import store from './store';
+import AddItem from './components/AddItem';
+import ItemList from './components/ItemList';
+
+const App = () => {
+  return (
+    <Provider store={store}>
+      <View>
+        <AddItem />
+        <ItemList />
+      </View>
+    </Provider>
+  );
+};
+
+export default App;
+¡Y eso es todo! Ahora tienes un CRUD básico en tu aplicación de React Native utilizando Redux Toolkit. Si tienes alguna pregunta adicional, por favor házmelo saber.
